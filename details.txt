@@ -1,0 +1,12 @@
+Homepage - Heo , featured products , categories , banners
+Product listing page - filters , sorting mech , grid/list view of products
+Product Details page - Images , price , description and Add to cart option
+Cart Page - Cart Items , quantity update , price summary.
+Checkout page - shipping Info , payment selection
+Orde Confirmation Page
+User Login/Register Page 
+User Account Dashboard 
+Admin Pages
+
+
+Material UI - for styling 
