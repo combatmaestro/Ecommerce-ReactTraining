@@ -1,5 +1,6 @@
 // src/pages/Orders.jsx
 import React from "react";
+import { Link as RouterLink } from "react-router-dom";
 import {
   Container,
   Typography,
@@ -46,7 +47,18 @@ export default function Orders() {
           <Typography>No orders found.</Typography>
         ) : (
           mockOrders.map((order) => (
-            <Paper key={order.id} sx={{ p: 3, mb: 3 }}>
+            <Paper
+              key={order.id}
+              sx={{
+                p: 3,
+                mb: 3,
+                transition: "0.2s",
+                "&:hover": { boxShadow: 6 },
+                textDecoration: "none",
+              }}
+              component={RouterLink}
+              to={`/orders/${order.id}`}
+            >
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Typography>
