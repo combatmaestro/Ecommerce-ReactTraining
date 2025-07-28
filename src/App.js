@@ -9,7 +9,7 @@ import Checkout from './pages/checkout';
 import OrderSucess from './pages/orderSucess';
 import Login from './pages/Login';
 import Register from './pages/register';
-
+import OrderHistory from './pages/orderHistory';
 function App() {
   return (
    <Router>
@@ -22,6 +22,8 @@ function App() {
        <Route path="/order-success" element={<OrderSucess />} />
        <Route path="/login" element={<Login />} />
        <Route path="/register" element={<Register />} />
+       <Route path="/orders" element={<OrderHistory />} />
+ 
      </Routes>
    </Router>
   );
