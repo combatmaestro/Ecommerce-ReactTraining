@@ -8,7 +8,7 @@ export default function Header(){
      }
 
     return(
-       <AppBar position="static" color="default" elevation={1}>
+       <AppBar position="static" color="primary" elevation={1}>
       <Toolbar>
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           MyShop

@@ -36,22 +36,24 @@ export default function Checkout() {
 
   const cartTotal = 3200;
 
-  return (
+    return (
     <>
       <Header />
       <Container sx={{ py: 6 }}>
-        <Typography variant="h4" gutterBottom>
+        <Typography variant="h4" fontWeight="bold" gutterBottom>
           Checkout
         </Typography>
 
         <Grid container spacing={4}>
+          {/* LEFT SIDE */}
           <Grid item xs={12} md={7}>
-            <Paper sx={{ p: 3 }}>
-              <Typography variant="h6" gutterBottom>
+            {/* Shipping Address */}
+            <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
+              <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Shipping Address
               </Typography>
 
-              <Grid container spacing={2}>
+              <Grid container spacing={2} mt={1}>
                 <Grid item xs={12} sm={6}>
                   <TextField
                     label="Full Name"
@@ -92,8 +94,9 @@ export default function Checkout() {
               </Grid>
             </Paper>
 
-            <Paper sx={{ p: 3, mt: 4 }}>
-              <Typography variant="h6" gutterBottom>
+            {/* Payment Method */}
+            <Paper elevation={3} sx={{ p: 4, mt: 4, borderRadius: 3 }}>
+              <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Payment Method
               </Typography>
               <RadioGroup
@@ -110,49 +113,54 @@ export default function Checkout() {
                   control={<Radio />}
                   label="Credit/Debit Card"
                 />
-                <FormControlLabel value="upi" control={<Radio />} label="UPI" />
+                <FormControlLabel
+                  value="upi"
+                  control={<Radio />}
+                  label="UPI"
+                />
               </RadioGroup>
             </Paper>
-          </Grid>
-
-          <Grid item xs={12} md={5}>
-            <Paper sx={{ p: 3 , mt:4}}>
-              <Typography variant="h6" gutterBottom>
+             <Paper elevation={3} sx={{ p: 4, mt: 4, borderRadius: 3 }}>
+              <Typography variant="h6" fontWeight="bold" gutterBottom>
                 Order Summary
               </Typography>
 
-              <Box display="flex" justifyContent="space-between" my={1}>
-                <Typography>Subtotal</Typography>
-                <Typography>₹{cartTotal}</Typography>
+              <Box display="flex" justifyContent="space-between" my={2}>
+                <Typography color="text.secondary">Subtotal</Typography>
+                <Typography fontWeight="medium">₹{cartTotal}</Typography>
               </Box>
 
-               <Box display="flex" justifyContent="space-between" my={1}>
-                <Typography>Shipping</Typography>
-                <Typography>Free</Typography>
+              <Box display="flex" justifyContent="space-between" my={2}>
+                <Typography color="text.secondary">Shipping</Typography>
+                <Typography fontWeight="medium">Free</Typography>
               </Box>
 
-              <Divider />
+              <Divider sx={{ my: 2 }} />
 
-               <Box display="flex" justifyContent="space-between" my={1}>
-                <Typography>Total</Typography>
-                <Typography>₹{cartTotal}</Typography>
+              <Box display="flex" justifyContent="space-between" my={2}>
+                <Typography variant="h6">Total</Typography>
+                <Typography variant="h6" fontWeight="bold">
+                  ₹{cartTotal}
+                </Typography>
               </Box>
 
-
-              <Button 
+              <Button
                 variant="contained"
                 color="primary"
+                size="large"
                 fullWidth
-                sx={{mt:3}}
+                sx={{ mt: 3 }}
                 onClick={handlePlaceOrder}
               >
-               Place Order
+                Place Order
               </Button>
             </Paper>
           </Grid>
+
+          {/* RIGHT SIDE */}
+          
         </Grid>
       </Container>
-
       <Footer />
     </>
   );

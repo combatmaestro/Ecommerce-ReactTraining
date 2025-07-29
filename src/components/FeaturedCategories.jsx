@@ -31,14 +31,27 @@ const categories = [
 
 export default function FeaturedCategories() {
   return (
-    <Box sx={{ py: 5 }}>
+    <Box sx={{ py: 5 , px:2 , backgroundColor : '#f9f9f9' }}>
       <Typography variant="h4" align="center" gutterBottom>
         Shop by Category
       </Typography>
       <Grid container spacing={4} justifyContent="center">
         {categories.map((cat, idx) => (
           <Grid item xs={12} sm={6} md={3} key={idx}>
-            <Card>
+            <Card
+              sx={{
+                borderRadius : 4,
+                boxShadow : 3,
+                transition : 'transform 0.3s ease',
+                '&hover':{
+                  transform : 'translateY(-5px)',
+                  boxShadow : 6,
+                },
+                height:'100%',
+                display:'flex',
+                flexDirection:'column'
+              }}
+            >
               <CardActionArea>
                 <CardMedia
                   component="img"
